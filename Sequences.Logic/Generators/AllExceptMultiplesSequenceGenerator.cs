@@ -1,9 +1,13 @@
-﻿using Sequences.Logic.Interfaces;
+﻿using System.Collections.Generic;
+using Sequences.Logic.Interfaces;
 
 namespace Sequences.Logic.Generators
 {
     public class AllExceptMultiplesSequenceGenerator : ISequenceGenerator
     {
-        
+        public IEnumerable<int> Generate(uint number)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
