@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sequences", "Sequences\Sequ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sequences.Tests.Unit", "Sequences.Tests.Unit\Sequences.Tests.Unit.csproj", "{B10B391C-C28F-4CE5-A083-8BCBB362FB63}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sequences.Logic", "Sequences.Logic\Sequences.Logic.csproj", "{FDA473C8-8F93-4176-BA6B-305DC839FA40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{B10B391C-C28F-4CE5-A083-8BCBB362FB63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B10B391C-C28F-4CE5-A083-8BCBB362FB63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B10B391C-C28F-4CE5-A083-8BCBB362FB63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDA473C8-8F93-4176-BA6B-305DC839FA40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDA473C8-8F93-4176-BA6B-305DC839FA40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDA473C8-8F93-4176-BA6B-305DC839FA40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDA473C8-8F93-4176-BA6B-305DC839FA40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

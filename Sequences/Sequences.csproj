@@ -8,4 +8,7 @@
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sequences.Logic\Sequences.Logic.csproj" />
+  </ItemGroup>
 </Project>

@@ -1,9 +1,8 @@
-using System;
 using Xunit;
 
 namespace Sequences.Tests.Unit
 {
-    public class UnitTest1
+    public class AllExceptMultiplesSequenceGeneratorTests
     {
         [Fact]
         public void Test1()
