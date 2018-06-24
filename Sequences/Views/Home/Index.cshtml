@@ -1,3 +1,20 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+
+<form action="/Sequence/Generate" method="get">
+    <div class="form-horizontal">
+        <h4>Sequences</h4>
+        <div class="text-danger"></div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="Number">Number</label>
+            <div class="col-md-10">
+                <input class="form-control" type="number"
+                       data-val="true" data-val-required="The Number field is required."
+                       id="Number" name="Number" value="" />
+                <span class="text-danger field-validation-valid"
+                      data-valmsg-for="Number" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+    </div>
+</form>
