@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Sequences.Logic.Interfaces;
 
@@ -8,7 +9,13 @@ namespace Sequences.Logic.Generators
     {
         public IEnumerable<string> Generate(int number)
         {
-            var sequence = Enumerable.Range(1, (int) number);
+            if (number < 0)
+                throw new ArgumentOutOfRangeException(
+                    nameof(number),
+                    number,
+                    "Number to generate sequence must be positive.");
+            
+            var sequence = Enumerable.Range(1, number);
 
             foreach (var i in sequence)
             {

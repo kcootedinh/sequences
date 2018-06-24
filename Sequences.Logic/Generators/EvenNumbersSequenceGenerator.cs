@@ -9,9 +9,13 @@ namespace Sequences.Logic.Generators
     {
         public IEnumerable<string> Generate(int number)
         {
-            if(number < 0) throw new ArgumentOutOfRangeException("number", number, "Number to generate sequence must be positive.");
+            if (number < 0)
+                throw new ArgumentOutOfRangeException(
+                    nameof(number),
+                    number,
+                    "Number to generate sequence must be positive.");
             
-            return Enumerable.Range(1, (int) number)
+            return Enumerable.Range(1, number)
                              .Where(i => i % 2 == 0)
                              .Select(i => i.ToString());
         }
