@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using Sequences.Logic.Generators;
 using Shouldly;
 using Xunit;
@@ -21,6 +23,14 @@ namespace Sequences.Tests.Unit
             var sequence = generator.Generate(number);
 
             sequence.ShouldBe(new[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"});
+        }
+        
+        [Fact]
+        public void NegativeNumber_ShouldThrowArgumentOutOfRange()
+        {
+            var number = -15;
+
+            Should.Throw<ArgumentOutOfRangeException>(() => generator.Generate(number).ToArray());
         }
     }
 }

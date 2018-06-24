@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using Sequences.Logic.Generators;
 using Shouldly;
 using Xunit;
@@ -25,6 +27,14 @@ namespace Sequences.Tests.Unit
                 "C", "7", "8", "C", "E", 
                 "11", "C", "13", "14", "Z", 
             });
+        }
+        
+        [Fact]
+        public void NegativeNumber_ShouldThrowArgumentOutOfRange()
+        {
+            var number = -15;
+
+            Should.Throw<ArgumentOutOfRangeException>(() => generator.Generate(number).ToArray());
         }
     }
 }
