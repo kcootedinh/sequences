@@ -2,19 +2,92 @@
     ViewData["Title"] = "Home Page";
 }
 
-<form action="/Sequence/Generate" method="get">
-    <div class="form-horizontal">
-        <h4>Sequences</h4>
-        <div class="text-danger"></div>
-        <div class="form-group">
-            <label class="col-md-2 control-label" for="Number">Number</label>
-            <div class="col-md-10">
-                <input class="form-control" type="number"
-                       data-val="true" data-val-required="The Number field is required."
-                       id="Number" name="Number" value="" />
-                <span class="text-danger field-validation-valid"
-                      data-valmsg-for="Number" data-valmsg-replace="true"></span>
-            </div>
+<div class="form-horizontal">
+    <h4>Sequences</h4>
+    <div class="text-danger"></div>
+    <div class="form-group">
+        <label class="col-md-2 control-label" for="Number">Number</label>
+        <div class="col-md-10">
+            <input class="form-control" type="number"
+                   data-val="true" data-val-required="The Number field is required."
+                   id="Number" name="Number" value=""/>
+            <span class="text-danger field-validation-valid"
+                  data-valmsg-for="Number" data-valmsg-replace="true">
+            </span>
         </div>
     </div>
-</form>
+
+    <div class="form-group">
+        <button class="col-md-2" id="buttonGetSequences">Get sequences</button>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">All up to number</label>
+        <div class="col-md-10">
+            <span id="results-span-0"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">All odd up to number</label>
+        <div class="col-md-10">
+            <span id="results-span-1"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">All even to number</label>
+        <div class="col-md-10">
+            <span id="results-span-2"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">All but multiples of 3 and 5</label>
+        <div class="col-md-10">
+            <span id="results-span-3"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Error result</label>
+        <div class="col-md-10">
+            <label id="results-error" class="text-danger"></label>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        $("#buttonGetSequences").click(function(e) {
+
+            // clear results
+            $("#results-span-0").val("");
+            $("#results-span-1").val("");
+            $("#results-span-2").val("");
+            $("#results-span-3").val("");
+            $("#results-error").val("");
+
+            e.preventDefault();
+
+            $.ajax({
+                type: "POST",
+                url: "/Sequence/Generate",
+                data: {
+                    number: $("#Number").val()
+                },
+                success: function(result) {
+                    $("#results-span-0").text(result.results[0]);
+                    $("#results-span-1").text(result.results[1]);
+                    $("#results-span-2").text(result.results[2]);
+                    $("#results-span-3").text(result.results[3]);
+                    $("#results-error").text("");
+                },
+                error: function(result) {
+                    $("#results-span-0").text("");
+                    $("#results-span-1").text("");
+                    $("#results-span-2").text("");
+                    $("#results-span-3").text("");
+                    $("#results-error").text(result.responseJSON.Number);
+                }
+            });
+        });
+    </script>
+}
