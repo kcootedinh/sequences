@@ -22,9 +22,9 @@ namespace Sequences
             services.AddMvc();
             
             services.AddTransient<ISequenceGenerator, AllNumbersSequenceGenerator>();
-            services.AddTransient<ISequenceGenerator, AllExceptMultiplesSequenceGenerator>();
-            services.AddTransient<ISequenceGenerator, EvenNumbersSequenceGenerator>();
             services.AddTransient<ISequenceGenerator, OddNumbersSequenceGenerator>();
+            services.AddTransient<ISequenceGenerator, EvenNumbersSequenceGenerator>();
+            services.AddTransient<ISequenceGenerator, AllExceptMultiplesSequenceGenerator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
